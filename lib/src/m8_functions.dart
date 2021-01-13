@@ -91,8 +91,9 @@ class M8Functions {
     AlturaTamanhoImpressaoTexto altura,
   }) async {
     stilo = stilo ?? StiloImpressaoTexto.fonteA;
+    posicao = posicao ?? PosicaoImpressaoTexto.esquerda;
     final String _dados = dados ?? '';
-    final int _posicao = posicao ?? 1;
+    final int _posicao = posicao.index;
     final int _stilo = stilo.index;
     final int _tamanho = tamanhoImpressaoTexto(largura, altura);
     final int _codigoResposta = await _channel.invokeMethod('impressaoTexto', {
