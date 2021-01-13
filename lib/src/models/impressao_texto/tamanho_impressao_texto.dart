@@ -26,28 +26,28 @@ int tamanhoImpressaoTexto(
   int _a = 0;
   if (a != null) {
     if (a.index == 0) {
-      _a = 1;
+      _a = 0;
     }
     if (a.index == 1) {
-      _a = 2;
+      _a = 1;
     }
     if (a.index == 2) {
-      _a = 3;
+      _a = 2;
     }
     if (a.index == 3) {
-      _a = 4;
+      _a = 3;
     }
     if (a.index == 4) {
-      _a = 5;
+      _a = 4;
     }
     if (a.index == 5) {
-      _a = 6;
+      _a = 5;
     }
     if (a.index == 6) {
-      _a = 7;
+      _a = 6;
     }
     if (a.index == 7) {
-      _a = 8;
+      _a = 7;
     }
   }
   if (l != null) {
