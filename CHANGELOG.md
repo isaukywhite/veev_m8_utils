@@ -1,3 +1,5 @@
+## [0.1.0] - TODO: Add release date.
+tudo certo
 ## [0.0.8] - TODO: Add release date.
 Os bugs eram do codigo java
 ## [0.0.7] - TODO: Add release date.
