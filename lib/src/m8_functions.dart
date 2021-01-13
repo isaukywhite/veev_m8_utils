@@ -13,7 +13,7 @@ class M8Functions {
     final int _linhas = linhas ?? 20;
     final int _codigoResposta =
         await _channel.invokeMethod('avancaPapel', {"linhas": _linhas});
-    final bool _erro = _codigoResposta != 0;
+    final bool _erro = _codigoResposta.toString() != '0';
     final String _mensagem =
         _erro ? "avancaPapel: ok" : "avancaPapel: erro codigo $_codigoResposta";
     final M8RespostaModel _resposta = M8RespostaModel(
@@ -25,7 +25,7 @@ class M8Functions {
     final int _avanco = avanco ?? 20;
     final int _codigoResposta =
         await _channel.invokeMethod('corte', {"avanco": _avanco});
-    final bool _erro = _codigoResposta != 0;
+    final bool _erro = _codigoResposta.toString() != '0';
     final String _mensagem =
         _erro ? "corte: ok" : "corte: erro codigo $_codigoResposta";
     final M8RespostaModel _resposta = M8RespostaModel(
@@ -51,7 +51,7 @@ class M8Functions {
       "largura": _largura,
       "hri": _hri,
     });
-    final bool _erro = _codigoResposta != 0;
+    final bool _erro = _codigoResposta.toString() != '0';
     final String _mensagem = _erro
         ? "impressaoCodigoBarras: ok"
         : "impressaoCodigoBarras: erro codigo $_codigoResposta";
@@ -74,7 +74,7 @@ class M8Functions {
       "tamanho": _tamanho,
       "nivel": _nivel,
     });
-    final bool _erro = _codigoResposta != 0;
+    final bool _erro = _codigoResposta.toString() != '0';
     final String _mensagem = _erro
         ? "impressaoQRCode: ok"
         : "impressaoQRCode: erro codigo $_codigoResposta";
@@ -102,7 +102,7 @@ class M8Functions {
       "stilo": _stilo,
       "tamanho": _tamanho,
     });
-    final bool _erro = _codigoResposta != 0;
+    final bool _erro = _codigoResposta.toString() != '0';
     final String _mensagem = _erro
         ? "impressaoTexto: ok"
         : "impressaoTexto: erro codigo $_codigoResposta";
