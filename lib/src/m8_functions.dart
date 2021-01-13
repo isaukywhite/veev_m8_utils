@@ -102,7 +102,7 @@ class M8Functions {
       "stilo": _stilo,
       "tamanho": _tamanho,
     });
-    final bool _erro = _codigoResposta >= 0;
+    final bool _erro = _codigoResposta < 0;
     final String _mensagem = _erro
         ? "impressaoTexto: erro codigo $_codigoResposta"
         : "impressaoTexto: ok";
