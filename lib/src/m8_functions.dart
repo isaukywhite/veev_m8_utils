@@ -14,8 +14,9 @@ class M8Functions {
     final int _codigoResposta =
         await _channel.invokeMethod('avancaPapel', {"linhas": _linhas});
     final bool _erro = _codigoResposta.toString() != '0';
-    final String _mensagem =
-        _erro ? "avancaPapel: ok" : "avancaPapel: erro codigo $_codigoResposta";
+    final String _mensagem = _codigoResposta.runtimeType.toString();
+    // final String _mensagem =
+    //     _erro ? "avancaPapel: ok" : "avancaPapel: erro codigo $_codigoResposta";
     final M8RespostaModel _resposta = M8RespostaModel(
         erro: _erro, mensagem: _mensagem, codigoResposta: _codigoResposta);
     return _resposta;
@@ -26,8 +27,9 @@ class M8Functions {
     final int _codigoResposta =
         await _channel.invokeMethod('corte', {"avanco": _avanco});
     final bool _erro = _codigoResposta.toString() != '0';
-    final String _mensagem =
-        _erro ? "corte: ok" : "corte: erro codigo $_codigoResposta";
+    // final String _mensagem =
+    //     _erro ? "corte: ok" : "corte: erro codigo $_codigoResposta";
+    final String _mensagem = _codigoResposta.runtimeType.toString();
     final M8RespostaModel _resposta = M8RespostaModel(
         erro: _erro, mensagem: _mensagem, codigoResposta: _codigoResposta);
     return _resposta;
@@ -52,9 +54,10 @@ class M8Functions {
       "hri": _hri,
     });
     final bool _erro = _codigoResposta.toString() != '0';
-    final String _mensagem = _erro
-        ? "impressaoCodigoBarras: ok"
-        : "impressaoCodigoBarras: erro codigo $_codigoResposta";
+    final String _mensagem = _codigoResposta.runtimeType.toString();
+    // final String _mensagem = _erro
+    //     ? "impressaoCodigoBarras: ok"
+    //     : "impressaoCodigoBarras: erro codigo $_codigoResposta";
     final M8RespostaModel _resposta = M8RespostaModel(
         erro: _erro, mensagem: _mensagem, codigoResposta: _codigoResposta);
     return _resposta;
@@ -103,9 +106,10 @@ class M8Functions {
       "tamanho": _tamanho,
     });
     final bool _erro = _codigoResposta.toString() != '0';
-    final String _mensagem = _erro
-        ? "impressaoTexto: ok"
-        : "impressaoTexto: erro codigo $_codigoResposta";
+    final String _mensagem = _codigoResposta.runtimeType.toString();
+    // final String _mensagem = _erro
+    //     ? "impressaoTexto: ok"
+    //     : "impressaoTexto: erro codigo $_codigoResposta";
     final M8RespostaModel _resposta = M8RespostaModel(
         erro: _erro, mensagem: _mensagem, codigoResposta: _codigoResposta);
     return _resposta;
