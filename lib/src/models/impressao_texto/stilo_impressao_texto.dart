@@ -1,0 +1,18 @@
+enum StiloImpressaoTexto {
+  fonteA,
+  fonteB,
+  sublinhado,
+  fonteBSublinhado,
+  reverso,
+  fonteBReverso,
+  sublinhadoReverso,
+  fonteBSublinhadoReverso,
+  negrito,
+  fonteBNegrito,
+  sublinhadoNegrito,
+  fonteBSublinhadoNegrito,
+  reversoNegrito,
+  fonteBReversoNegrito,
+  sublinhadoReversoNegrito,
+  fonteBSublinhadoReversoNegrito,
+}
