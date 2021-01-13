@@ -24,53 +24,53 @@ int tamanhoImpressaoTexto(
 ) {
   int _l = 0;
   int _a = 0;
-  if (l != null) {
-    if (l.index == 0) {
-      _l = 1;
-    }
-    if (l.index == 1) {
-      _l = 2;
-    }
-    if (l.index == 2) {
-      _l = 3;
-    }
-    if (l.index == 3) {
-      _l = 4;
-    }
-    if (l.index == 4) {
-      _l = 5;
-    }
-    if (l.index == 5) {
-      _l = 6;
-    }
-    if (l.index == 6) {
-      _l = 7;
-    }
-    if (l.index == 7) {
-      _l = 8;
-    }
-  }
   if (a != null) {
     if (a.index == 0) {
-      _a = 16;
+      _a = 1;
     }
     if (a.index == 1) {
-      _a = 32;
+      _a = 2;
     }
     if (a.index == 2) {
-      _a = 48;
+      _a = 3;
     }
     if (a.index == 3) {
-      _a = 64;
+      _a = 4;
     }
     if (a.index == 4) {
-      _a = 80;
+      _a = 5;
     }
     if (a.index == 5) {
-      _a = 96;
+      _a = 6;
     }
     if (a.index == 6) {
-      _a = 112;
+      _a = 7;
+    }
+    if (a.index == 7) {
+      _a = 8;
+    }
+  }
+  if (l != null) {
+    if (l.index == 0) {
+      _l = 16;
+    }
+    if (l.index == 1) {
+      _l = 32;
+    }
+    if (l.index == 2) {
+      _l = 48;
+    }
+    if (l.index == 3) {
+      _l = 64;
+    }
+    if (l.index == 4) {
+      _l = 80;
+    }
+    if (l.index == 5) {
+      _l = 96;
+    }
+    if (l.index == 6) {
+      _l = 112;
     }
   }
   return _a + _l;
