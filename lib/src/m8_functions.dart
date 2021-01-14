@@ -35,19 +35,23 @@ class M8Functions {
 
   Future<M8RespostaModel> impressaoCodigoBarras({
     String dados,
+    int altura,
     int largura,
     HriImpressaoCodigoBarras hri,
   }) async {
     hri = hri ?? HriImpressaoCodigoBarras.nenhum;
     largura = largura ?? 1;
+    altura = altura ?? 1;
     final int _tipo = 2;
     final String _dados = dados ?? '';
+    final int _altura = altura > 255 ? 255 : altura;
     final int _largura = largura > 6 ? 6 : largura;
     final int _hri = hri.index;
     final int _codigoResposta =
         await _channel.invokeMethod('impressaoCodigoBarras', {
       "tipo": _tipo,
       "dados": _dados,
+      "altura": _altura,
       "largura": _largura,
       "hri": _hri,
     });
