@@ -70,8 +70,9 @@ class M8Functions {
     NivelCorrecaoImpressaoQRCode nivel,
   }) async {
     nivel = nivel ?? NivelCorrecaoImpressaoQRCode.setePorCento;
+    tamanho = tamanho ?? 1;
     final String _dados = dados ?? '';
-    final int _tamanho = tamanho ?? 1;
+    final int _tamanho = tamanho > 6 ? 6 : tamanho;
     final int _nivel = nivel.index;
     final int _codigoResposta = await _channel.invokeMethod('impressaoQRCode', {
       "dados": _dados,
