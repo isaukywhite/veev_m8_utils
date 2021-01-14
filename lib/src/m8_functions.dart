@@ -73,11 +73,11 @@ class M8Functions {
     tamanho = tamanho ?? 1;
     final String _dados = dados ?? '';
     final int _tamanho = tamanho > 6 ? 6 : tamanho;
-    final int _nivel = nivel.index;
+    final int _nivel = nivel.index + 1;
     final int _codigoResposta = await _channel.invokeMethod('impressaoQRCode', {
       "dados": _dados,
       "tamanho": _tamanho,
-      "nivel": _nivel,
+      "nivelCorrecao": _nivel,
     });
     final bool _erro = _codigoResposta.toString() != '0';
     final String _mensagem = _erro
