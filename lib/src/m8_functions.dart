@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:veev_m8_utils/src/models/imprime_xml_nfce/param_imprime_xml_nfce.dart';
 import 'models/impressao_codigo_barras/hri_impressao_codigo_barras.dart';
 import 'models/impressao_qr_code/nivel_correcao_impressao_qr_code.dart';
 import 'models/impressao_texto/posicao_impressao_texto.dart';
@@ -111,6 +112,35 @@ class M8Functions {
     final String _mensagem = _erro
         ? "impressaoTexto: erro codigo $_codigoResposta"
         : "impressaoTexto: ok";
+    final M8RespostaModel _resposta = M8RespostaModel(
+        erro: _erro, mensagem: _mensagem, codigoResposta: _codigoResposta);
+    return _resposta;
+  }
+
+  Future<M8RespostaModel> imprimeXMLNFCe({
+    String dados,
+    int indexCsc,
+    String csc,
+    List<ParamImprimeXMLNFCe> params,
+  }) async {
+    indexCsc = indexCsc ?? 0;
+    params = params ?? <ParamImprimeXMLNFCe>[];
+    final String _dados = dados ?? '';
+    final int _indexCsc = indexCsc;
+
+    /// 5565d56087392f646c5ec67f45c5f3fe
+    final String _csc = csc ?? '';
+    final int _param = calcularParamImprimeXMLNFCe(params);
+    final int _codigoResposta = await _channel.invokeMethod('imprimeXMLNFCe', {
+      "dados": _dados,
+      "indexcsc": _indexCsc,
+      "csc": _csc,
+      "param": _param,
+    });
+    final bool _erro = _codigoResposta < 0;
+    final String _mensagem = _erro
+        ? "imprimeXMLNFCe: erro codigo $_codigoResposta"
+        : "imprimeXMLNFCe: ok";
     final M8RespostaModel _resposta = M8RespostaModel(
         erro: _erro, mensagem: _mensagem, codigoResposta: _codigoResposta);
     return _resposta;
